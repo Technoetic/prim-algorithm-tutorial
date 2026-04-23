@@ -1,6 +1,0 @@
-/* style.css — 인덱스. 실제 내용은 ./css/*.css 로 분리. */
-
-@import url("./css/tokens.css");
-@import url("./css/layout.css");
-@import url("./css/components.css");
-@import url("./css/viz.css");
