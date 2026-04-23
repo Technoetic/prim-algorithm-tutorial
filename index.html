@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>프림 알고리즘 — 단계별 실행</title>
+    <meta
+      name="description"
+      content="프림(Prim) 알고리즘을 단계별로 실행해보는 인터랙티브 플레이그라운드."
+    />
+    <meta name="theme-color" content="#D9392B" />
+    <meta name="color-scheme" content="light" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Prim Algorithm Tutorial" />
+
+    <meta property="og:title" content="프림 알고리즘 — 단계별 실행" />
+    <meta
+      property="og:description"
+      content="프림(Prim) 알고리즘을 단계별로 실행해보는 인터랙티브 플레이그라운드."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="프림 알고리즘 — 단계별 실행" />
+    <meta
+      name="twitter:description"
+      content="프림(Prim) 알고리즘을 단계별로 실행해보는 인터랙티브 플레이그라운드."
+    />
+
+    <link rel="preload" href="./src/style.css" as="style" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="chapter chapter-play" id="chapter-3" data-chapter="3">
+        <h2 data-num="03">단계별 실행</h2>
+        <p class="chapter__lead" data-role="story">
+          새 동네의 여섯 집에 인터넷 케이블을 가장 싸게 깔아봅시다.
+        </p>
+        <div class="play-layout">
+          <div class="play-layout__toast" data-role="toast" role="status" aria-live="polite">
+            ▶ 재생을 눌러 프림 알고리즘을 실행해보세요.
+          </div>
+          <div class="play-layout__viz">
+            <svg data-role="main-svg" aria-label="프림 알고리즘 인터랙티브 시각화"></svg>
+          </div>
+          <aside class="play-layout__code" aria-label="의사코드 패널" tabindex="0">
+            <div data-role="code-panel"></div>
+            <div class="stats">
+              <div>상태: <strong data-role="frontier">{ }</strong></div>
+              <div>총 비용: <strong data-role="total-cost">0</strong></div>
+            </div>
+          </aside>
+          <div class="play-layout__control" role="toolbar" aria-label="재생 컨트롤">
+            <div class="control-group">
+              <button class="btn" data-action="prev" aria-label="이전 스텝">⏮ 이전</button>
+              <button class="btn btn--primary" data-action="play" aria-pressed="false">
+                ▶ 재생
+              </button>
+              <button class="btn" data-action="next" aria-label="다음 스텝">다음 ⏭</button>
+              <button class="btn" data-action="reset" aria-label="처음부터 다시">🔄 리셋</button>
+            </div>
+            <div class="control-group control-group--speed" aria-label="속도">
+              <button class="btn" data-action="speed" data-speed="0.5">느리게</button>
+              <button class="btn active" data-action="speed" data-speed="1">보통</button>
+              <button class="btn" data-action="speed" data-speed="1.5">빠르게</button>
+            </div>
+            <div
+              class="control-group control-group--preset"
+              role="tablist"
+              aria-label="프리셋 선택"
+            >
+              <button class="btn active" data-action="preset" data-preset="cable" role="tab">
+                광케이블
+              </button>
+              <button class="btn" data-action="preset" data-preset="grid" role="tab">전력망</button>
+              <button class="btn" data-action="preset" data-preset="maze" role="tab">미로</button>
+            </div>
+            <div class="control-group--progress" data-role="progress">1 / 1</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

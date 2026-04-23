@@ -1,0 +1,24 @@
+node_modules/
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+blob-report/
+.DS_Store
+Thumbs.db
+
+# 프로젝트 하네스 부산물 — 공개 배포에 불필요
+step_archive/
+step_archive/references/
+step_archive/screenshots/
+
+# 번들 캐시/개발용 스크립트 부산물
+/shot-*.cjs
+/verify-*.cjs
+/perf-test.cjs
+/smoke-test.cjs
+/bundle-test.cjs
+/layout-verify.cjs
+/playwright-awwwards-collect.cjs
+/playwright-research-*.cjs
+/*.log

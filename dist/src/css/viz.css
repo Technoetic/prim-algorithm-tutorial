@@ -1,0 +1,125 @@
+/* viz.css — 인터랙티브 SVG 시각화 상태 스타일 + Chapter 3 그리드 */
+
+.chapter-play {
+  max-width: 1120px;
+}
+
+.play-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  gap: var(--sp-4);
+}
+
+@media (width >= 1024px) {
+  .play-layout {
+    grid-template-columns: 1fr 360px;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .play-layout__toast {
+    grid-column: 1 / -1;
+  }
+
+  .play-layout__viz {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .play-layout__code {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .play-layout__control {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+
+/* SVG 정점 상태 */
+.node circle {
+  fill: var(--surface);
+  stroke: var(--text-muted);
+  transition:
+    fill var(--transition-duration) ease-in-out,
+    stroke var(--transition-duration) ease-in-out,
+    transform var(--transition-duration) ease-in-out;
+}
+
+.node text {
+  fill: var(--text);
+  pointer-events: none;
+}
+
+.node.state-frontier circle {
+  fill: #fff5d6;
+  stroke: var(--warn);
+}
+
+.node.state-in-tree circle {
+  fill: #e6f4ea;
+  stroke: var(--ok);
+}
+
+.node.state-current circle {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.node.state-current {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 1200ms ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.node:focus-visible {
+  outline: none;
+}
+
+.node:focus-visible circle {
+  stroke: var(--accent);
+  stroke-width: 4;
+}
+
+/* SVG 간선 상태 */
+.edge {
+  stroke: var(--line);
+  transition:
+    stroke var(--transition-duration) ease-in-out,
+    stroke-width var(--transition-duration) ease-in-out,
+    opacity var(--transition-duration) ease-in-out;
+}
+
+.edge.state-candidate {
+  stroke: var(--warn);
+  stroke-dasharray: 6 4;
+  stroke-width: 4;
+}
+
+.edge.state-selected {
+  stroke: var(--ok);
+  stroke-width: 5;
+}
+
+.edge.state-rejected {
+  stroke: #bbb;
+  stroke-dasharray: 2 4;
+  opacity: 0.5;
+}
+
+.edge-label text {
+  fill: var(--text);
+}

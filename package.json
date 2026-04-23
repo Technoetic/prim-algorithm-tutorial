@@ -1,0 +1,30 @@
+{
+  "name": "prim-algorithm-tutorial",
+  "version": "0.1.0",
+  "description": "초보자를 위한 인터랙티브 프림 알고리즘 튜토리얼 (정적 웹)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.js",
+    "test": "vitest run",
+    "test:coverage": "c8 vitest run",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "lint:css": "stylelint 'src/**/*.css'",
+    "a11y": "node scripts/a11y.js",
+    "lhci": "lhci autorun"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.2",
+    "@biomejs/biome": "2.4.12",
+    "@playwright/test": "^1.59.1",
+    "c8": "^11.0.0",
+    "jscpd": "^4.0.9",
+    "madge": "^8.0.0",
+    "playwright": "^1.59.1",
+    "source-map-explorer": "^2.5.3",
+    "stylelint": "^17.8.0",
+    "stylelint-config-standard": "^38.0.0",
+    "vitest": "^1.6.1"
+  }
+}

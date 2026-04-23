@@ -1,0 +1,220 @@
+/* components.css — 버튼/카드/코드패널/컨트롤 바 */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 44px;
+  min-width: 44px;
+  padding: var(--sp-3) var(--sp-6);
+  font-family: var(--font-ui);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition:
+    transform var(--transition-duration) ease-in-out,
+    background var(--transition-duration) ease-in-out,
+    border-color var(--transition-duration) ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-card);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: #b8291d;
+}
+
+.btn.active {
+  background: #fff0ec;
+  border-color: var(--accent);
+  color: #6b1108;
+}
+
+.concept-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--sp-4);
+}
+
+.concept-card h3 {
+  font-family: var(--font-ui);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+  margin: 0 0 var(--sp-2);
+}
+
+.concept-card p {
+  margin: 0;
+  font-size: var(--fs-1);
+  color: var(--text-muted);
+}
+
+.play-layout__toast {
+  background: #fffbf0;
+  border-left: 3px solid var(--accent);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-sm);
+  font-size: var(--fs-2);
+  min-height: 52px;
+}
+
+.play-layout__viz {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  height: 420px;
+  padding: var(--sp-2);
+  overflow: hidden;
+}
+
+.play-layout__viz svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 1023px) {
+  .play-layout__viz {
+    height: auto;
+    min-height: 320px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.play-layout__code {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-1);
+  overflow-y: auto;
+  max-height: 420px;
+}
+
+.code-line {
+  padding: 2px var(--sp-2);
+  border-radius: var(--r-sm);
+  transition: background var(--transition-duration) ease-in-out;
+  white-space: pre;
+  color: var(--text);
+}
+
+.code-line.active {
+  background: #fff0ec;
+  color: #6b1108;
+  font-weight: var(--fw-bold);
+}
+
+.stats {
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-3);
+  border-top: 1px dashed var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--fs-1);
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.stats strong {
+  color: var(--text);
+}
+
+.play-layout__control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  position: sticky;
+  bottom: 0;
+}
+
+.control-group {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.control-group--speed {
+  margin-left: auto;
+  padding-left: var(--sp-3);
+  border-left: 1px solid var(--line);
+}
+
+.control-group--speed .btn,
+.control-group--preset .btn {
+  min-width: 64px;
+  padding: var(--sp-2) var(--sp-3);
+}
+
+.control-group--preset {
+  padding-left: var(--sp-3);
+  border-left: 1px solid var(--line);
+}
+
+.control-group--progress {
+  font-family: var(--font-mono);
+  font-size: var(--fs-1);
+  color: var(--text-muted);
+  margin-left: var(--sp-4);
+}
+
+.preset-tabs {
+  display: flex;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+}
+
+@media (width <= 767px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--sp-4);
+}
+
+.gallery__card h3 {
+  font-family: var(--font-ui);
+  font-size: var(--fs-2);
+  margin: 0 0 var(--sp-2);
+}
+
+.gallery__card p {
+  margin: 0;
+  font-size: var(--fs-1);
+  color: var(--text-muted);
+}
